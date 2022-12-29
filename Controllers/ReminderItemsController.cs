@@ -80,7 +80,8 @@ namespace Reminders1.Controllers
             _context.ReminderItems.Add(reminderItem);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetReminderItem", new { id = reminderItem.Id }, reminderItem);
+            //return CreatedAtAction("GetReminderItem", new { id = reminderItem.Id }, reminderItem);
+            return CreatedAtAction(nameof(GetReminderItem), new { id = reminderItem.Id }, reminderItem);
         }
 
         // DELETE: api/ReminderItems/5
